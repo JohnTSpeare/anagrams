@@ -8,6 +8,7 @@ class Dictionary(object):
             self.words = f.read().split("\n")
 
     def is_valid(self, word):
+        """Return True iff word is in the dictionary."""
         return bin_search(word, self.words)
 
 

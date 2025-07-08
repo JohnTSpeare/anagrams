@@ -3,6 +3,16 @@
 ## v0.*
 -------
 
+### v0.3.0 released on 2025-07-08
+
+#### Initial Release
+
+* Text list of words added.
+* Dictionary class and word jumble functions added.
+
+#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/2
+
+
 ### v0.2.0 released on 2025-07-08
 
 #### Initial Release
