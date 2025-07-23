@@ -1,6 +1,7 @@
 """Main module for anagram."""
 import argparse
-import sys
+
+from anagrams import get_anagrams
 
 
 def setup_arguments():
@@ -18,7 +19,7 @@ def setup_arguments():
 
 def main():
     args = setup_arguments()
-    # TODO
+    get_anagrams(args.word)
     return 0
 
 
