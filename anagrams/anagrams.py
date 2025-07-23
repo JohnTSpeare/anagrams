@@ -1,4 +1,4 @@
-"""Wrapper module; determines anagrams of a given word or phrase."""
+"""Module for determining anagrams of a given word or phrase."""
 import re
 
 from dlx import all_exact_covers
