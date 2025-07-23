@@ -3,6 +3,16 @@
 ## v0.*
 -------
 
+### v0.4.0 released on 2025-07-XX
+
+#### Initial Release
+
+* Main module added.
+* Functionality added for small input sizes.
+
+#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/2
+
+
 ### v0.3.0 released on 2025-07-08
 
 #### Initial Release
