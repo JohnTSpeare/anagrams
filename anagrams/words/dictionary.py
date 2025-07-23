@@ -63,13 +63,13 @@ def get_valid_jumbles(word, key=None):
     """Given a word, find all word jumbles that appear in a Dictionary.
     Arguments:
         list<T> word: typically a string, but can be a coded number list.
-        lambda<list<T>:list<char>> key: key for translating a non-string
+        lambda<list<T>:str> key: key for translating a non-string
             jumbled word into a string, to be checked against the Dictionary.
-            Defaults to not manipulating the jumbled word.
+            Defaults to converting character list to string.
     """
     if not key:
-        key = lambda x: x
+        key = lambda x: "".join(x)
     dictionary = Dictionary()
     jumbles = jumble(word)
     return [jumble for jumble in jumbles \
-        if dictionary.valid_word("".join(key(jumble)))]
+        if dictionary.valid_word(key(jumble))]
