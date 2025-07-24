@@ -1,5 +1,17 @@
 # anagrams
 
+## v1.*
+
+### v1.0.0 released on 2025-07-24
+
+#### Initial Release
+
+* Main module added.
+* Functional MVP for small input sizes.
+
+#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/3
+
+
 ## v0.*
 -------
 
