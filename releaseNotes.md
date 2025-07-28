@@ -2,6 +2,15 @@
 
 ## v1.*
 
+### v1.0.1 released on 2025-07-28
+
+#### Bug Fix
+
+* Updated get_anagrams to actually return the anagrams after printing to stdout.
+
+#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/4
+
+
 ### v1.0.0 released on 2025-07-24
 
 #### Initial Release

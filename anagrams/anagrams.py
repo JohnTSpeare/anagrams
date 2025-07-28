@@ -27,6 +27,10 @@ def get_anagrams(word):
     constraints = numbers
     elements = jumbles
     mapping = lambda element: [x for x in constraints if x in element]
-    anagrams = all_exact_covers(constraints, elements, mapping)
-    for anagram in anagrams:
-        print(", ".join([key(coded_word) for coded_word in anagram]))
+    coded_anagrams = all_exact_covers(constraints, elements, mapping)
+    anagrams = []
+    for coded_anagram in coded_anagrams:
+        anagram = [key(coded_word) for coded_word in coded_anagram]
+        print(", ".join(anagram))
+        anagrams.append(anagram)
+    return anagrams
