@@ -1,8 +1,6 @@
 """Test module for DLX."""
 import unittest
 
-import mock
-
 import anagrams.dlx as dlx
 
 
