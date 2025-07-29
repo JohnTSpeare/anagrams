@@ -1,9 +1,6 @@
 """Test module for Trie."""
 import unittest
 
-import mock
-import pytest
-
 from anagrams.trie import Trie
 
 
