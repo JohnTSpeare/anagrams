@@ -7,7 +7,7 @@ from anagrams import get_anagrams
 def setup_arguments():
     parser = argparse.ArgumentParser(
         prog="Anagrams",
-        description="Find anagrams given a word or phrase.",
+        description="Find anagrams for a given a word or phrase.",
     )
     parser.add_argument(
         "word",
