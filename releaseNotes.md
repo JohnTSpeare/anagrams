@@ -9,7 +9,7 @@
 * Cleanup and refactoring of `dlx.py`.
 * `get_anagrams` updated to filter out all non-alphabet characters.
 
-#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/4
+#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/5
 
 
 ### v1.1.0 released on 2025-07-29
