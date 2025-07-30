@@ -59,7 +59,7 @@ def _add_letter_to_words(letter, words):
     return added_words
 
 
-def get_valid_jumbles(word, key=None):
+def get_valid_jumbles(word, key=None, dictionary=None):
     """Given a word, find all word jumbles that appear in a Dictionary.
     Arguments:
         list<T> word: typically a string, but can be a coded number list.
@@ -69,7 +69,8 @@ def get_valid_jumbles(word, key=None):
     """
     if not key:
         key = lambda x: "".join(x)
-    dictionary = Dictionary()
+    if not dictionary:
+        dictionary = Dictionary()
     jumbles = jumble(word)
     return [jumble for jumble in jumbles \
         if dictionary.valid_word(key(jumble))]

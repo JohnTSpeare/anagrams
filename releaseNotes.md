@@ -2,6 +2,17 @@
 
 ## v1.*
 
+### v1.1.0 released on 2025-07-XX
+
+#### Internal Improvement
+
+* Added Unit tests.
+* Added Dockerfile.
+* Enabled running unit tests from the Makefile.
+
+#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/5
+
+
 ### v1.0.1 released on 2025-07-28
 
 #### Bug Fix
