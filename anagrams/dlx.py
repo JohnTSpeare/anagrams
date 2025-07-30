@@ -57,7 +57,7 @@ class ColumnHeader(object):
 
 
 class DLX(object):
-    """Linked list containing references to adjacent nodes 
+    """Linked list containing references to adjacent nodes
     above & below, and left & right, as well as a singly-linked reference to 
     the column header.
     """

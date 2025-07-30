@@ -1,4 +1,4 @@
-VERSION = 1.1.0
+VERSION = 1.2.0
 
 test:
 	docker build --target test -t anagrams-env .
