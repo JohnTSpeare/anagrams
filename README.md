@@ -7,8 +7,9 @@ https://websites.umich.edu/~jlawler/wordlist
 
 ## Usage
 
+```
 > python anagrams "A word or phrase"
-
+```
 
 ## Running Unit Tests
 

@@ -20,6 +20,7 @@ class Test_AllExactCovers(unittest.TestCase):
         self.mapping = lambda element: element
 
     def test_all_exact_covers(self):
+        """Test for all_exact_covers."""
         result = dlx.all_exact_covers(
             self.constraints, self.elements, self.mapping)
         self.assertEqual(

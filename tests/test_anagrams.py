@@ -15,6 +15,7 @@ class Test_Anagrams(unittest.TestCase):
     @mock.patch("anagrams.anagrams.get_valid_jumbles")
     @mock.patch("anagrams.anagrams.all_exact_covers")
     def test_get_anagrams(self, mock_all_exact_covers, mock_get_valid_jumbles):
+        """Test for get_anagrams."""
         mock_get_valid_jumbles.return_value = [
             [0, 1],
             [2, 3],
