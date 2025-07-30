@@ -8,7 +8,7 @@ from words.dictionary import get_valid_jumbles
 def get_anagrams(word):
     """Get anagrams of given word."""
     print("Finding anagrams for: %r" % word)
-    letters = re.sub(r"[\W0-9_]+", "", word.lower())
+    letters = re.sub(r"[^a-z]+", "", word.lower())
     print("Given letters: %r" % letters)
     numbers = [i for i in range(len(letters))]
     key = lambda nums: "".join([letters[i] for i in nums])
@@ -26,7 +26,7 @@ def get_anagrams(word):
     print("\nAnagrams:")
     constraints = numbers
     elements = jumbles
-    mapping = lambda element: [x for x in constraints if x in element]
+    mapping = lambda element: element
     coded_anagrams = all_exact_covers(constraints, elements, mapping)
     anagrams = []
     for coded_anagram in coded_anagrams:

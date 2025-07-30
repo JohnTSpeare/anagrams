@@ -26,11 +26,7 @@ class ColumnHeader(object):
     def append(self, dlx):
         """Add DLX node to bottom of column."""
         self.count += 1
-        if not self.down:
-            self.down = dlx
-            dlx.up = self
-            return
-        node = self.down
+        node = self
         while node.down:
             node = node.down
         node.down = dlx
@@ -61,7 +57,7 @@ class ColumnHeader(object):
 
 
 class DLX(object):
-    """Linked list containing doubly-linked references to adjacent nodes 
+    """Linked list containing references to adjacent nodes
     above & below, and left & right, as well as a singly-linked reference to 
     the column header.
     """
@@ -164,40 +160,6 @@ def build_dlx(constraints, elements, mapping):
     return row_header
 
 
-def _all_exact_covers(row_header, partial_solution, full_solutions):
-    """Helper for all_exact_covers. Keeps track of current partial and full covers."""
-    counts = []
-    node = row_header.right
-    while node:
-        counts.append(node.get_count())
-        node = node.right
-    node = row_header.right
-    if not node:
-        # Partial solution satisfies all constraints
-        full_solutions.append([x for x in partial_solution])
-        return
-    column = column_count = None
-    while node:
-        node_count = node.get_count()
-        if node_count <= 0:
-            # A constraint is un-satisfiable given current partial solution
-            return
-        if not column or node_count < column_count:
-            column = node
-            column_count = node_count
-        node = node.right
-    dlx = column.down
-    while dlx:
-        partial_solution.append(dlx.row_id)
-        deleted_nodes = []
-        deleted_nodes = dlx.delete_row(
-            delete_columns=True, deleted_nodes=deleted_nodes)
-        _all_exact_covers(row_header, partial_solution, full_solutions)
-        dlx.undelete_row(deleted_nodes=deleted_nodes)
-        partial_solution.remove(dlx.row_id)
-        dlx = dlx.down
-
-
 def all_exact_covers(constraints, elements, mapping):
     """Find all exact covers for a given constraints, elements and mapping.
     Arguments:
@@ -214,3 +176,33 @@ def all_exact_covers(constraints, elements, mapping):
     exact_covers = []
     _all_exact_covers(row_header, [], exact_covers)
     return exact_covers
+
+
+def _all_exact_covers(row_header, partial_solution, full_solutions):
+    """Helper for all_exact_covers. Keeps track of current partial and full covers."""
+    node = row_header.right
+    if not node:
+        # Partial solution satisfies all constraints.
+        full_solutions.append([x for x in partial_solution])
+        return
+    column = None
+    while node:
+        # Find constraint with fewest matching elements.
+        node_count = node.get_count()
+        if node_count <= 0:
+            # A constraint is un-satisfiable given current partial solution.
+            return
+        if not column or node_count < column.get_count():
+            column = node
+        node = node.right
+    dlx = column.down
+    while dlx:
+        # Find all solutions featuring each element in column.
+        partial_solution.append(dlx.row_id)
+        deleted_nodes = []
+        deleted_nodes = dlx.delete_row(
+            delete_columns=True, deleted_nodes=deleted_nodes)
+        _all_exact_covers(row_header, partial_solution, full_solutions)
+        dlx.undelete_row(deleted_nodes=deleted_nodes)
+        partial_solution.remove(dlx.row_id)
+        dlx = dlx.down

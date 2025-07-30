@@ -2,15 +2,25 @@
 
 ## v1.*
 
-### v1.1.0 released on 2025-07-XX
+### v1.2.0 released on 2025-07-30
 
-#### Internal Improvement
+#### Internal Improvements
+
+* Cleanup and refactoring of `dlx.py`.
+* `get_anagrams` updated to filter out all non-alphabet characters.
+
+#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/5
+
+
+### v1.1.0 released on 2025-07-29
+
+#### Internal Improvements
 
 * Added Unit tests.
 * Added Dockerfile.
 * Enabled running unit tests from the Makefile.
 
-#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/5
+#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/4
 
 
 ### v1.0.1 released on 2025-07-28
@@ -18,8 +28,6 @@
 #### Bug Fix
 
 * Updated get_anagrams to actually return the anagrams after printing to stdout.
-
-#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/4
 
 
 ### v1.0.0 released on 2025-07-24
