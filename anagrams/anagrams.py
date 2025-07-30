@@ -26,7 +26,7 @@ def get_anagrams(word):
     print("\nAnagrams:")
     constraints = numbers
     elements = jumbles
-    mapping = lambda element: [x for x in constraints if x in element]
+    mapping = lambda element: element
     coded_anagrams = all_exact_covers(constraints, elements, mapping)
     anagrams = []
     for coded_anagram in coded_anagrams:
