@@ -2,6 +2,14 @@
 
 ## v1.*
 
+### v1.3.0 released on 2025-08-XX
+
+#### Internal Improvement
+
+* Added more efficient method of getting valid jumbles for larger input sizes.
+
+#### PR(s): https://github.com/JohnTSpeare/anagrams/pull/5
+
 ### v1.2.0 released on 2025-07-30
 
 #### Internal Improvements
