@@ -46,3 +46,15 @@ class Test_Jumbles(object):
         result = dictionary.get_valid_jumbles("test", dictionary=mock_dictionary)
         mock_jumble.assert_called_once_with("test")
         assert result == [[char for char in "word2"]]
+
+
+class Test_GetWords(object):
+    """Test module for get_valid_words."""
+    def test_get_valid_words(self):
+        class TestDictionary(object):
+            def __init__(self):
+                self.words = ["te", "st", "toolong", "xxxx", "tett"]
+        test_dictionary = TestDictionary()
+        valid_words = dictionary.get_valid_words(
+            "test", dictionary=test_dictionary)
+        assert valid_words == ["te", "st"]
